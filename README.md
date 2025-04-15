@@ -1,1 +1,1 @@
-# newfincash-frontend
+# Fincash
