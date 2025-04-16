@@ -1,54 +1,27 @@
-# React + TypeScript + Vite
+# New-Fincash
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esse portifólio tem como principal objetivo, aperfeiçoar e incluir novas tecnologias em nosso antigo projeto, o Fincash. Visamos fazer um projeto mais completo atrelado aos nossos novos conhecimentos e experiências.
 
-Currently, two official plugins are available:
+Dentro do Front-End usamos as seguintes tecnologias:
+<div align="left">
+    <img src="https://skillicons.dev/icons?i=react,vite,javascript,css,bootstrap,tailwind" />
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<br>
 
-## Expanding the ESLint configuration
+As principais melhorias e atualizações serão voltadas nas seguintes tarefas:
+- ⬛ Sistema de planos para cada nível de usuário (Plus, gold, silver, etc.); <br>
+- ⬛ Aba de noticias a respeito do mundo fintech; <br>
+- ⬛ Atualização de UI/UX; <br>
+- ⬛ Vizualização da cotação em tempo real de criptos e stablecoins; <br>
+- ⬛ Paínel inteligente para mostrar gastos e atividades do usuário; <br>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<br>
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Conheça a equipe talentosa por trás do projeto:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+| Foto | Nome | Função | Github | Linkedin |
+| :---------: | :---------: | :---------------------: | :-----------------: | :-------: |
+| <img src="https://avatars.githubusercontent.com/u/168497458?v=4" width=50px alt="Foto do Henrique"/> | **Henrique Martins** | Desenvolvedor Back End | <a href="https://github.com/Developer-Martins"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/henriquemoreiramartins/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+| <img src="https://avatars.githubusercontent.com/u/129808878?u=6767b6ecbb41b7ea788d221a47a2f23e1ebe47a4&v=4&size=64" width=50px alt="Foto do Leo"> | **Leonardo Borges** | Desenvolvedor Full Stack | <a href="https://github.com/borges-leo"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/leonardo-borges-/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> 
+| <img src="https://avatars.githubusercontent.com/u/162379221?v=4" width=50px  alt="Foto do Thomaz"> | **Thomaz Mello** | Desenvolvedor Front End | <a href="https://github.com/ThOMaZMe11o"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/thomaz-feitosa-de-mello-76a9a5294/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
