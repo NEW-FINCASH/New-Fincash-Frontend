@@ -4,7 +4,7 @@ Esse portifólio tem como principal objetivo, aperfeiçoar e incluir novas tecno
 
 Dentro do Front-End usamos as seguintes tecnologias:
 <div align="left">
-    <img src="https://skillicons.dev/icons?i=react,vite,javascript,css,bootstrap,tailwind,html" />
+    <img src="https://skillicons.dev/icons?i=react,vite,typescript,javascript,css,bootstrap,tailwind,html" />
 </div>
 
 <br>
