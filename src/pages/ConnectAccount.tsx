@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import GoogleButton from "../components/GoogleButton";
+import AppleButton from "../components/AppleButton";
 
 export default function ConnectAccount() {
   const [formData, setFormData] = useState({
@@ -98,22 +100,10 @@ export default function ConnectAccount() {
 
         <div className="row gx-2">
           <div className="col-6">
-            <button
-              type="button"
-              className="w-100 text-center bg-transparent border border-secondary py-3 px-2 rounded text-white fw-light d-flex align-items-center justify-content-center gap-2"
-            >
-              <img src="/assets/google.png" alt="Google" style={{ width: "20px" }} />
-              Google
-            </button>
+            <GoogleButton />
           </div>
           <div className="col-6">
-            <button
-              type="button"
-              className="w-100 text-center bg-transparent border border-secondary py-3 px-2 rounded text-white fw-light d-flex align-items-center justify-content-center gap-2"
-            >
-              <img src="/assets/apple.png" alt="Apple" style={{ width: "20px" }} />
-              Apple
-            </button>
+            <AppleButton />
           </div>
         </div>
       </form>
