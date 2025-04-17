@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 export default function ConnectAccount() {
   const [formData, setFormData] = useState({
@@ -7,6 +9,17 @@ export default function ConnectAccount() {
   });
 
   const [errors, setErrors] = useState<Partial<typeof formData>>({});
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const redirect = params.get('redirect');
+
+    if (redirect) {
+      navigate(redirect);
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

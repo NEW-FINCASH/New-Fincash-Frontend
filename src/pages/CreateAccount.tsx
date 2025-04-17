@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateAccount() {
   type FormFields = {
@@ -9,6 +10,18 @@ export default function CreateAccount() {
     confirmPassword: string;
     acceptedTerms: boolean;
   };
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const redirect = params.get('redirect');
+
+    if (redirect) {
+      navigate(redirect);
+    }
+  }, []);
+
 
   type FormErrors = Partial<Record<keyof FormFields, string>>;
 
