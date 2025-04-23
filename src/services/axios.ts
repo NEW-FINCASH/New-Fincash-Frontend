@@ -4,7 +4,7 @@ import { auth } from "./firebase"; // Assumindo que o firebase está configurado
 
 const provider = new GoogleAuthProvider();
 
-export const handleLogin = async () => {
+export const handleLogin = async (navigate: (path: string) => void) => {
   try {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
@@ -16,6 +16,7 @@ export const handleLogin = async () => {
     const response = await axios.post("http://localhost:5000/api/verify-token", { token: idToken });
     
     console.log("Resposta do backend:", response.data);
+    navigate("/"); // Redireciona para a página inicial após o login
   } catch (error) {
     console.error("Erro no login:", error);
   }

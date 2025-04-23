@@ -58,7 +58,7 @@ export default function ConnectAccount() {
         style={{ width: "100%", maxWidth: "400px" }}
         noValidate
       >
-        <h1 className="mb-3 fw-light">Conect your account</h1>
+        <h1 className="mb-3 fw-light">Connect your account</h1>
 
         <span className="d-block mb-4 text-secondary">
           Don’t have an account?{" "}
@@ -102,7 +102,7 @@ export default function ConnectAccount() {
           className="btn btn-primary w-100 py-3 mb-4"
           style={{ backgroundColor: "#9848B3", border: "none" }}
         >
-          Login
+          Connect Account
         </button>
 
         <div className="d-flex align-items-center mb-3 gap-2">
@@ -116,7 +116,7 @@ export default function ConnectAccount() {
             <button
               type="button"
               className="w-100 text-center bg-transparent border border-secondary py-3 px-2 rounded text-white fw-light d-flex align-items-center justify-content-center gap-2"
-              onClick={handleLogin}
+              onClick={() => handleLogin(navigate)}
               >
               <img src="/assets/google.png" alt="Google" style={{ width: "20px" }} />
               Google
