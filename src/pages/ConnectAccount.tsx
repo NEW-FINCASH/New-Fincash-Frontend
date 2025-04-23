@@ -58,6 +58,7 @@ export default function ConnectAccount() {
         const user = result.user;
         console.log("User signed in with Google:", user);
         // Redirecionar ou fazer algo após o login bem-sucedido
+        navigate("/");
       })
       .catch((error) => {
         console.error("Error signing in with Google:", error);
