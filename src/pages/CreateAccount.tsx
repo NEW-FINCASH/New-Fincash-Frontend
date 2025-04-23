@@ -1,32 +1,5 @@
 import React, { useState } from "react";
 
-/* import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyC5MwITOYj62bVPjgKdX6H7CUnE1a7uOB8",
-  authDomain: "fincash-addfd.firebaseapp.com",
-  projectId: "fincash-addfd",
-  storageBucket: "fincash-addfd.firebasestorage.app",
-  messagingSenderId: "1052570866292",
-  appId: "1:1052570866292:web:274b3faf6c062c08a73721"
-};
-
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
-
-export const signInWithGoogle = async () => {
-  try {
-    const result = await signInWithPopup(auth, googleProvider);
-    return result.user;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-}; */
-
-
 export default function CreateAccount() {
   type FormFields = {
     name: string;
