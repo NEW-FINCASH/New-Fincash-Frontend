@@ -1,7 +1,4 @@
-import React, { use, useState } from "react";
-
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "../services/firebase";
+import React, { useState } from "react";
 import { handleRegister } from "../services/axios";
 import { useNavigate } from "react-router-dom";
 
