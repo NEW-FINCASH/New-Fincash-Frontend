@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "../services/firebase";
+import { handleRegister } from "../services/axios";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateAccount() {
   type FormFields = {
@@ -12,6 +11,8 @@ export default function CreateAccount() {
     confirmPassword: string;
     acceptedTerms: boolean;
   };
+
+  const navigate = useNavigate();
 
   type FormErrors = Partial<Record<keyof FormFields, string>>;
 
@@ -70,19 +71,6 @@ export default function CreateAccount() {
       // Enviar para API aqui
     }
   };
-
-  const handleSignInWithGoogle = () => {
-      const provider = new GoogleAuthProvider();
-      signInWithPopup(auth, provider)
-        .then((result) => {
-          const user = result.user;
-          console.log("User signed in with Google:", user);
-          // Redirecionar ou fazer algo após o login bem-sucedido
-        })
-        .catch((error) => {
-          console.error("Error signing in with Google:", error);
-        });
-    };
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center vh-75">
@@ -198,7 +186,7 @@ export default function CreateAccount() {
             <button
               type="button"
               className="w-100 text-center bg-transparent border border-secondary py-3 px-2 rounded text-white fw-light d-flex align-items-center justify-content-center gap-2"
-              onClick={handleSignInWithGoogle}
+              onClick={() => handleRegister(navigate)}
             >
               <img src="/assets/google.png" alt="Google" style={{ width: "20px" }} />
               Google
