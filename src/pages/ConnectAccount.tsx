@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { handleLogin } from "../services/axios";
+import { handleFacebookLogin } from "../services/axios";
 
 
 export default function ConnectAccount() {
@@ -49,6 +50,9 @@ export default function ConnectAccount() {
       // Lógica de login aqui
     }
   };
+
+  /* const handleChanger = (e: React.ChangeEvent<HTMLInputElement>) => { */
+
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center vh-100">
@@ -117,7 +121,7 @@ export default function ConnectAccount() {
               type="button"
               className="w-100 text-center bg-transparent border border-secondary py-3 px-2 rounded text-white fw-light d-flex align-items-center justify-content-center gap-2"
               onClick={() => handleLogin(navigate)}
-              >
+            >
               <img src="/assets/google.png" alt="Google" style={{ width: "20px" }} />
               Google
             </button>
@@ -126,6 +130,7 @@ export default function ConnectAccount() {
             <button
               type="button"
               className="w-100 text-center bg-transparent border border-secondary py-3 px-2 rounded text-white fw-light d-flex align-items-center justify-content-center gap-2"
+              onClick={() => handleFacebookLogin(navigate)}
             >
               <img src="/assets/face.png" alt="Facebook" style={{ width: "20px" }} />
               Facebook
