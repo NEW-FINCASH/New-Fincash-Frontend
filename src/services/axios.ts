@@ -59,11 +59,37 @@ export const handleFacebookLogin = async (navigate: (path: string) => void) => {
 
     const idToken = await alsoUser.getIdToken();
 
-    const response = await axios.post("http://localhost:5000/api/verify-token", { token: idToken });
+    const response = await axios.post("https://new-fincash-frontend.vercel.app/api/verify-token", { token: idToken });
 
     console.log("Resposta do backend:", response.data);
     navigate("/");
   } catch (error) {
     console.error("Erro no login:", error);
+  }
+};
+
+export const handleFacebookRegister = async (navigate: (path: string) => void) => {
+  try {
+    const result = await signInWithPopup(auth, providerFace); // <-- Aqui é o fix
+    const alsoUser = result.user;
+
+    const idToken = await alsoUser.getIdToken(); // Pega o ID token do usuário
+
+    const additionalInfo = getAdditionalUserInfo(result);
+    const isNewUser = additionalInfo?.isNewUser;
+
+    const response = await axios.post("https://new-fincash-frontend.vercel.app/api/verify-token", {
+      token: idToken,
+      isNewUser,
+      email: alsoUser.email,
+      name: alsoUser.displayName,
+      photoURL: alsoUser.photoURL,
+      uid: alsoUser.uid,
+    });
+
+    console.log("Usuário registrado/resposta do backend:", response.data);
+    navigate("/"); // Redireciona para a página inicial após o registro
+  } catch (error) {
+    console.error("Erro no registro:", error);
   }
 };

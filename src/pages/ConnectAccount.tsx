@@ -51,9 +51,6 @@ export default function ConnectAccount() {
     }
   };
 
-  /* const handleChanger = (e: React.ChangeEvent<HTMLInputElement>) => { */
-
-
   return (
     <div className="d-flex flex-column justify-content-center align-items-center vh-100">
       <form
