@@ -50,6 +50,7 @@ export const handleRegister = async (navigate: (path: string) => void) => {
   }
 };
 
+// Função para o login com Facebook
 const providerFace = new FacebookAuthProvider();
 
 export const handleFacebookLogin = async (navigate: (path: string) => void) => {
@@ -59,7 +60,9 @@ export const handleFacebookLogin = async (navigate: (path: string) => void) => {
 
     const idToken = await alsoUser.getIdToken();
 
-    const response = await axios.post("https://new-fincash-frontend.vercel.app/api/verify-token", { token: idToken });
+    const response = await axios.post("https://new-fincash-backend.vercel.app/api/verify-token", {
+      token: idToken,
+    });
 
     console.log("Resposta do backend:", response.data);
     navigate("/");
@@ -67,6 +70,7 @@ export const handleFacebookLogin = async (navigate: (path: string) => void) => {
     console.error("Erro no login:", error);
   }
 };
+
 
 export const handleFacebookRegister = async (navigate: (path: string) => void) => {
   try {
