@@ -82,7 +82,7 @@ export const handleFacebookRegister = async (navigate: (path: string) => void) =
     const additionalInfo = getAdditionalUserInfo(result);
     const isNewUser = additionalInfo?.isNewUser;
 
-    const response = await axios.post("https://new-fincash-frontend.vercel.app/api/verify-token", {
+    const response = await axios.post("https://new-fincash-backend.vercel.app/api/verify-token", {
       token: idToken,
       isNewUser,
       email: alsoUser.email,
