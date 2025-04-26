@@ -71,7 +71,6 @@ export const handleFacebookLogin = async (navigate: (path: string) => void) => {
   }
 };
 
-
 export const handleFacebookRegister = async (navigate: (path: string) => void) => {
   try {
     const result = await signInWithPopup(auth, providerFace); // <-- Aqui é o fix
