@@ -45,6 +45,7 @@ export const handleRegister = async (navigate: (path: string) => void) => {
     });
 
     console.log("Usuário registrado/reposta do backend:", response.data);
+    console.log(idToken);
     navigate("/"); // Redireciona para a página inicial após o registro
   } catch (error) {
     console.error("Erro no registro:", error);
@@ -66,6 +67,7 @@ export const handleFacebookLogin = async (navigate: (path: string) => void) => {
     });
 
     console.log("Resposta do backend:", response.data);
+    console.log(idToken);
     navigate("/");
   } catch (error) {
     console.error("Erro no login:", error);
@@ -92,6 +94,7 @@ export const handleFacebookRegister = async (navigate: (path: string) => void) =
     });
 
     console.log("Usuário registrado/resposta do backend:", response.data);
+    console.log(idToken);
     navigate("/"); // Redireciona para a página inicial após o registro
   } catch (error) {
     console.error("Erro no registro:", error);
