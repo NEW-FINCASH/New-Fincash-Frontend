@@ -102,6 +102,13 @@ export default function ConnectAccount() {
           type="submit"
           className="btn btn-primary w-100 py-3 mb-4"
           style={{ backgroundColor: "#9848B3", border: "none" }}
+          onClick={() => {
+            const params = new URLSearchParams(window.location.search);
+            const redirect = params.get('redirect');
+            if (redirect) {
+              navigate(redirect);
+            }
+          }}
         >
           Connect Account
         </button>

@@ -17,6 +17,7 @@ export const handleLogin = async (navigate: (path: string) => void) => {
     const response = await axios.post("http://localhost:5000/api/verify-token", { token: idToken });
 
     console.log("Resposta do backend:", response.data);
+    console.log(idToken);
     navigate("/"); // Redireciona para a página inicial após o login
   } catch (error) {
     console.error("Erro no login:", error);
