@@ -20,7 +20,7 @@ export default function Home() {
   if (!user) return null;
 
   return (
-    <div className="container bg-dark rounded py-5">
+    <div className="d-flex justify-content-center align-items-center rounded vh-100 vw-100">
       <div className="card profile-card p-3 mx-auto" style={{ maxWidth: "400px" }}>
         <div className="d-flex align-items-center gap-3 mb-3">
           <img
