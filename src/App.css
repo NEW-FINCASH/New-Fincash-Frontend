@@ -1,6 +1,8 @@
+#root {
+  background-color: black;
+}
+
 body {
-  background-image: url(../public/assets/background.webp);
-  background-size: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

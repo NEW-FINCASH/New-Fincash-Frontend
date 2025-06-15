@@ -52,7 +52,7 @@ export default function ConnectAccount() {
   };
 
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+    <div className="d-flex flex-column justify-content-center align-items-center vw-100 vh-100">
       <form
         onSubmit={handleSubmit}
         className="p-4 text-white fw-regular"
