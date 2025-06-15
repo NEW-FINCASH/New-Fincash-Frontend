@@ -4,6 +4,7 @@ import ConnectAccount from './pages/ConnectAccount';
 import ForgotPassword from './pages/ForgotPassword';
 import Home from './pages/Home';
 import Account from './pages/Account';
+import Welcome from './pages/Welcome';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/" element={<Home />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/welcome" element={<Welcome />} />
         </Routes>
       </Router>
     </>
