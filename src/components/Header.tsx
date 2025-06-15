@@ -6,11 +6,11 @@ export default function Header() {
             <div className="d-flex justify-content-between align-items-center w-100">
                 <img src="/assets/fincash.png" alt="Logo" style={{ width: '10%'}}/>
                 <div className="d-flex justify-content-between align-items-center gap-5">
-                    <Link to="" className="">Product</Link>
-                    <Link to="" className="">About us</Link>
-                    <Link to="" className="">Roadmaps</Link>
-                    <Link to="" className="">Register</Link>
-                    <Link to="" className="">Login</Link>
+                    <Link to="" className="text-white text-decoration-none">Product</Link>
+                    <Link to="" className="text-white text-decoration-none">About us</Link>
+                    <Link to="" className="text-white text-decoration-none">Roadmaps</Link>
+                    <Link to="" className="text-white text-decoration-none">Register</Link>
+                    <Link to="" className="text-decoration-none btn btn-light rounded-5 px-4">Login</Link>
                 </div>
             </div>
         </header>
