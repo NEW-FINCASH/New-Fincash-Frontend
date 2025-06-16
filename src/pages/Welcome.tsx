@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import { BarChart, PiggyBank, Target, TrendingUp } from 'lucide-react';
+import { BarChart, Wallet, Target, Sparkles } from 'lucide-react';
 
 export default function Welcome() {
     return (
@@ -22,7 +22,7 @@ export default function Welcome() {
                             <p className="text-secondary">Our AI automatically categorizes your spending. Find out where your money is going and get insights on how to save effortlessly.</p>
                         </div>
                         <div className="">
-                            <PiggyBank className=""></PiggyBank>
+                            <Wallet className=""></Wallet>
                             <h2 className="text-white">AI-Powered Custom Budgeting</h2>
                             <p className="text-secondary">Forget spreadsheets. Based on your income and spending habits, we create a flexible, realistic budget plan that works for you.</p>
                         </div>
@@ -32,7 +32,7 @@ export default function Welcome() {
                             <p className="text-secondary">Buying a home? Taking a trip? Set your goals and our AI creates a step-by-step plan to get you there faster.</p>
                         </div>
                         <div className="">
-                            <TrendingUp className=""></TrendingUp>
+                            <Sparkles className=""></Sparkles>
                             <h2 className="text-white">Investment Insights (Coming Soon!)</h2>
                             <p className="text-secondary">Receive simplified analysis of your profile and allocation suggestions to make your money work for you, even if you are not an expert.</p>
                         </div>
