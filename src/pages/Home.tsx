@@ -1,7 +1,7 @@
 import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "../services/firebase";
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
+import HeaderProfile from "../components/HeaderProfile";
 
 export default function Home() {
   const [user, setUser] = useState<User | null>(null);
@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <>
-    <Header />
+    <HeaderProfile />
     <div className="d-flex justify-content-center align-items-center rounded vw-100" style={{ minHeight: "calc(100vh - 80px)" }}>
       <div className="card profile-card p-3 mx-auto" style={{ maxWidth: "400px" }}>
         <div className="d-flex align-items-center gap-3 mb-3">
