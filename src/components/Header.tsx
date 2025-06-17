@@ -8,9 +8,9 @@ export default function Header() {
                 <div className="d-flex justify-content-between align-items-center gap-4">
                     <Link to="" className="text-white text-decoration-none">Product</Link>
                     <Link to="" className="text-white text-decoration-none">About us</Link>
-                    <Link to="" className="text-white text-decoration-none">Roadmaps</Link>
-                    <Link to="" className="text-white text-decoration-none">Sign Up</Link>
-                    <Link to="" className="text-decoration-none btn btn-light rounded-3 px-4">Sign In</Link>
+                    <Link to="" className="text-white text-decoration-none">Contact</Link>
+                    <Link to="/createaccount" className="text-white text-decoration-none">Sign Up</Link>
+                    <Link to="/connectaccount" className="text-decoration-none btn btn-light rounded-3 px-4">Sign In</Link>
                 </div>
             </div>
         </header>

@@ -24,20 +24,7 @@ export default function Home() {
     <>
     <HeaderProfile />
     <div className="d-flex justify-content-center align-items-center rounded vw-100" style={{ minHeight: "calc(100vh - 80px)" }}>
-      <div className="card profile-card p-3 mx-auto" style={{ maxWidth: "400px" }}>
-        <div className="d-flex align-items-center gap-3 mb-3">
-          <img
-            src={user.photoURL ?? ""}
-            alt={user.displayName ?? "Usuário"}
-            className="rounded-circle"
-            style={{ width: "80px", height: "80px", objectFit: "cover" }}
-          />
-          <div>
-            <h5 className="mb-1">{user.displayName}</h5>
-            <p className="mb-0 email-text">{user.email}</p>
-          </div>
-        </div>
-      </div>
+      <h1>home</h1>
     </div>
     </>
   );

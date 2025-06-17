@@ -1,9 +1,28 @@
 import { Link } from "react-router-dom";
+import { onAuthStateChanged, User } from "firebase/auth";
+import { auth } from "../services/firebase";
+import { useEffect, useState } from "react";
 
 export default function HeaderProfile() {
+    const [user, setUser] = useState<User | null>(null);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (u) => {
+        if (u) {
+            setUser(u);
+        } else {
+            window.location.href = "/login";
+        }
+    });
+
+    return () => unsubscribe();
+    }, []);
+
+    if (!user) return null;
+
     return (
         <>
-            <header className="vw-100 py-3 px-5 d-flex justify-content-center align-items-center text-white" style={{ height: '80px', boxShadow: '0 2px 4px rgba(255, 255, 255, 0.1)'}}>
+        <header className="vw-100 py-3 px-5 d-flex justify-content-center align-items-center text-white" style={{ height: '80px', boxShadow: '0 2px 4px rgba(255, 255, 255, 0.1)'}}>
             <div className="d-flex justify-content-between align-items-center w-100">
                 <img src="/assets/fincash.png" alt="Logo" style={{ width: '10%'}}/>
                 <div className="d-flex justify-content-between align-items-center gap-4">
@@ -11,10 +30,13 @@ export default function HeaderProfile() {
                     <Link to="" className="text-white text-decoration-none">AI-powered goals</Link>
                     <Link to="" className="text-white text-decoration-none">Latest news</Link>
                     <Link to="" className="text-white text-decoration-none">Price in real time</Link>
-                    <Link to="" className="text-decoration-none btn btn-light rounded-5 p-1 d-flex justify-content-center align-items-center" style={{ width: '40px', height: '40px' }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" className="bi bi-person-fill" viewBox="0 0 16 16">
-                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                        </svg>
+                    <Link to="/account" className="text-decoration-none btn btn-light rounded-5 p-1 d-flex justify-content-center align-items-center" style={{ width: '40px', height: '40px' }}>
+                        <img
+                            src={user.photoURL ?? ""}
+                            alt={user.displayName ?? "Usuário"}
+                            className="rounded-circle"
+                            style={{ width: "40px", height: "40px", objectFit: "cover" }}
+                        />
                     </Link>
                 </div>
             </div>
