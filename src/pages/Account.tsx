@@ -2,7 +2,8 @@ import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "../services/firebase";
 import { useEffect, useState } from "react";
 import HeaderProfile from "../components/HeaderProfile";
-import { Link } from "react-router-dom";
+import { data, Link } from "react-router-dom";
+import { LineChart, Line, YAxis, XAxis, CartesianGrid } from "recharts";
 
 export default function Account() {
     const notificacoes = [
@@ -13,6 +14,15 @@ export default function Account() {
             descricao: "Você realizou uma transferência de R$ 129,90,00 para LTDA Cotton Company",
         }
     ]
+
+    const data = [
+        { name: 'Jan', vendas: 4000 },
+        { name: 'Fev', vendas: 3000 },
+        { name: 'Mar', vendas: 2000 },
+        { name: 'Abr', vendas: 2780 },
+        { name: 'Mai', vendas: 1890 },
+        { name: 'Jun', vendas: 2390 },
+    ];
 
     const [user, setUser] = useState<User | null>(null);
 
@@ -71,7 +81,15 @@ export default function Account() {
                         </div>
                     </div>
 
-                    <div className="bg-dark rounded text-white p-3 mt-4" style={{ width: '100%', height: '300px'}}>Gráficos</div>
+                    <div className="bg-dark rounded text-white p-3 mt-4" style={{ width: '100%', height: '300px'}}>
+                        <LineChart className="w-100" data={data}>
+                            <XAxis dataKey="name"/>
+                            <YAxis/>
+                            <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
+                            <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+                            <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
+                        </LineChart>
+                    </div>
                     <div className="bg-dark rounded text-white p-3 mt-4" style={{ width: '100%', height: '' }}>
                         <table className="table table-dark table-hover">
                             <thead>
