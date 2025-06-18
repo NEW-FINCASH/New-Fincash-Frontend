@@ -38,7 +38,7 @@ export default function Account() {
                 <h1>Background Wallpaper.</h1>  
               </div>
               <div className="d-flex justify-content-center align-items-center w-100 p-4" >
-                <div className="d-flex flex-column justify-content-start align-items-start w-50 p-2">
+                <div className="d-flex flex-column justify-content-start align-items-start w-75 p-2">
                     <div className="d-flex justify-content-between align-items-start w-100">
                         <div className="d-flex align-items-center">
                             <img 
