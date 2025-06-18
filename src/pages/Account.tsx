@@ -71,7 +71,8 @@ export default function Account() {
                         </div>
                     </div>
 
-                    <div className="bg-dark rounded text-white p-3 mt-4 d-flex align-items-center" style={{ width: '100%', height: '300px'}}>
+                    <div className="bg-dark rounded text-white p-3 mt-4 d-flex flex-column align-items-center" style={{ width: '100%', height: ''}}>
+                        <h1 className="text-white fw-light fs-4">Gráfico de receitas e despesas inteligente</h1>
                         <MeuGrafico />
                     </div>
                     <div className="bg-dark rounded text-white p-3 mt-4" style={{ width: '100%', height: '' }}>
