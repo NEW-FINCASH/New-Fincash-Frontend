@@ -51,15 +51,12 @@ export default function Account() {
                         </div>
                         <button className="btn btn-light">Editar perfil<i className=""></i></button>
                     </div>
-                    <div className="d-flex justify-content-between align-items-start mt-2 w-100">
-                        <div className="d-flex flex-column justify-content-center align-items-center w-50 mt-3">
-                            <input className="w-100 mb-4 bg-dark py-1 px-2 rounded border-0 text-white fw-light" type="" placeholder="thomazmelo1912@gmail.com" />
-                            <input className="w-100 mb-4 bg-dark py-1 px-2 rounded border-0 text-white fw-light" type="" placeholder="Av. Elisio Galdino Sobrinho, São José Dos Ca..."/>
-                            <input className="w-100 mb-4 bg-dark py-1 px-2 rounded border-0 text-white fw-light" type="" placeholder="+55 (12) 98707-2463"/>
-                            <input className="w-100 mb-4 bg-dark py-1 px-2 rounded border-0 text-white fw-light" type="" placeholder="@thomaz_mellux" />
+                    <div className="d-flex justify-content-between align-items-start mt-2 w-100" style={{ height: '280px'}} >
+                        <div className="d-flex flex-column justify-content-center align-items-center w-50 h-100 pe-3">
+                            <input className="w-100 mb-4 bg-dark py-1 px-2 rounded border-0 text-white fw-light" type="" placeholder="Input com informações do usuário" />
                         </div>
-                        <div className="w-50 ps-3">
-                            <div className="bg-dark w-100 mt-3 rounded p-3">
+                        <div className="w-50 h-100">
+                            <div className="bg-dark w-100 rounded p-3 h-100">
                                 <h1 className="text-white fs-4 fw-medium text-center">Ultimas notificações</h1>
                                 {notificacoes.map((notificacao) => (
                                     <div key={notificacao.id} className="px-3 py-2 text-white border w-100 mt-3 rounded p-1">
@@ -72,6 +69,40 @@ export default function Account() {
                                 ))}
                             </div>
                         </div>
+                    </div>
+
+                    <div className="bg-dark rounded text-white p-3 mt-4" style={{ width: '100%', height: '300px'}}>Gráficos</div>
+                    <div className="bg-dark rounded text-white p-3 mt-4" style={{ width: '100%', height: '' }}>
+                        <table className="table table-dark table-hover">
+                            <thead>
+                                <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">Value</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <th scope="row" className="text-success">Receita</th>
+                                <td>R$12,90</td>
+                                <td>12-05-2025</td>
+                                <td>Lanche do Jonas</td>
+                                </tr>
+                                <tr>
+                                <th scope="row" className="text-danger">Despesa</th>
+                                <td>R$3,89</td>
+                                <td>15-06-2025</td>
+                                <td>Coca-cola</td>
+                                </tr>
+                                <tr>
+                                <th scope="row" className="text-danger">Despesa</th>
+                                <td>$12</td>
+                                <td>18-06-2025</td>
+                                <td>Pagamento do Perssua</td>
+                                </tr>
+                            </tbody>
+                            </table>
                     </div>
                 </div>
               </div>
