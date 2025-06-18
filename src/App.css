@@ -13,3 +13,41 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* Estilização para navegadores WebKit (Chrome, Safari, Edge) */
+
+/* A barra de rolagem inteira */
+::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem vertical */
+  height: 8px; /* Altura da barra de rolagem horizontal */
+}
+
+/* O "fundo" da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: #343a40; /* Cor de fundo escura, similar ao bg-dark */
+  border-radius: 10px; /* Borda arredondada */
+}
+
+/* O "polegar" ou "alça" da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background: #6c757d; /* Cor cinza mais clara */
+  border-radius: 10px; /* Borda arredondada */
+  border: 2px solid #343a40; /* Uma borda para dar um respiro, da mesma cor do track */
+}
+
+/* O "polegar" da barra de rolagem ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: #8e9499; /* Cor um pouco mais clara ao passar o mouse */
+}
+
+/* O canto onde as duas barras se encontram (se houver ambas) */
+::-webkit-scrollbar-corner {
+  background: #343a40; /* Cor do canto */
+}
+
+/* Você pode querer aplicar esses estilos apenas a um container específico.
+   Para fazer isso, você precisaria adicionar uma classe ao seu div de notificações
+   e prefixar os seletores com essa classe. Exemplo:
+
+   .notificacoes-container::-webkit-scrollbar { ... }
+*/
