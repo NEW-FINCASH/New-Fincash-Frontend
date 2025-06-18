@@ -181,27 +181,37 @@ export default function Account() {
         <h1>Background Wallpaper.</h1>
       </div>
       <div className="d-flex justify-content-center align-items-center w-100 p-4" >
-        <div className="d-flex flex-column justify-content-start align-items-start w-75 p-2">
+        <div className="d-flex flex-column justify-content-start align-items-start w-100 p-2">
           <div className="d-flex justify-content-between align-items-start w-100">
             <div className="d-flex align-items-center">
               <img
                 src={user.photoURL ?? ""}
                 alt={user.displayName ?? "Usuário"}
                 className="rounded-circle me-4"
-                style={{ width: "90px", height: "90px", objectFit: "cover", border: "3px solid #6c757d" }}
+                style={{ width: "90px", height: "90px", objectFit: "cover"}}
               />
               <div>
                 <h1 className="text-white fw-bold mb-1">{user.displayName ?? "Usuário"}</h1>
                 <p className="text-muted mb-0">{user.email}</p>
+                
               </div>
             </div>
-            <button className="btn btn-outline-light">
-              Editar perfil
-              <svg width="16" height="16" fill="currentColor" className="bi bi-pencil-square ms-2" viewBox="0 0 16 16">
-                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                <path fillRule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-              </svg>
-            </button>
+            <div className="d-flex flex-column justify-content-between align-items-center" style={{ height: '90px'}}>
+                <button className="btn btn-outline-light d-flex justify-content-between align-items-center" style={{ width: '140px' }}>
+                    Edit profile
+                    <svg width="16" height="16" fill="currentColor" className="bi bi-pencil-square ms-2" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fillRule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                    </svg>
+                </button>
+                <button className="btn btn-outline-light mt-2 d-flex justify-content-between align-items-center" style={{ width: '140px' }}>
+                    Sign Up
+                    <svg width="16" height="16" fill="currentColor" className="bi bi-box-arrow-right ms-2" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                    </svg>
+                </button>
+            </div>
           </div>
           <div className="d-flex justify-content-between align-items-start mt-4 w-100" style={{ height: '280px'}} >
             <div className="d-flex flex-column justify-content-start align-items-center w-50 h-100 pe-3">
@@ -214,7 +224,7 @@ export default function Account() {
               </div>
               <div className="bg-dark w-100 mt-3 p-3 rounded" style={{ height: '50%'}}>
                 <h1 className="text-white fw-light fs-4">Membro Desde</h1>
-                <p className="text-white-50 m-0"></p>
+                <p className="text-white-50 m-0">Vai ser com base na página de planos, quando o pagamento for realizado pela Stripe essa data vai constar como data de ínicio.</p>
               </div>
             </div>
             <div className="w-50 h-100">
