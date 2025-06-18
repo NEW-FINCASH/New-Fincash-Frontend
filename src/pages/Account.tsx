@@ -177,8 +177,8 @@ export default function Account() {
   <>
     <HeaderProfile />
     <div className="d-flex flex-column justify-content-start align-items-start rounded vw-100" style={{ minHeight: "calc(100vh - 80px)" }}>
-      <div className="bg-white d-flex justify-content-center align-items-center" style={{ width: '100%', height: '150px' }}>
-        <h1>Background Wallpaper.</h1>
+      <div className="bg-white d-flex justify-content-center align-items-center" style={{ width: '100%', height: '200px' }}>
+        <h1>Background Image.</h1>
       </div>
       <div className="d-flex justify-content-center align-items-center w-100 p-4" >
         <div className="d-flex flex-column justify-content-start align-items-start w-100 p-2">
@@ -191,8 +191,8 @@ export default function Account() {
                 style={{ width: "90px", height: "90px", objectFit: "cover"}}
               />
               <div>
-                <h1 className="text-white fw-bold mb-1">{user.displayName ?? "Usuário"}</h1>
-                <p className="text-muted mb-0">{user.email}</p>
+                <h1 className="text-white fw-medium mb-1">{user.displayName ?? "Usuário"}</h1>
+                <p className="mb-0 text-dark-emphasis">{user.email}</p>
                 
               </div>
             </div>
