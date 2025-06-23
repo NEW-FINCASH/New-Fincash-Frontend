@@ -92,47 +92,54 @@ export default function Home() {
   // --- Estrutura JSX do Dashboard ---
   return (
     <>
-      <HeaderProfile />
-      <div className="d-flex flex-column align-items-center vw-100 p-4" style={{ minHeight: "calc(100vh - 80px)", backgroundColor: '#212529' }}> {/* Fundo escuro para a página */}
-        <h1 className="text-white mb-4 fw-light">Visão Geral Financeira</h1>
-
-        {/* Linha 1: Saldo Atual e Cards de Resumo */}
-        <div className="d-flex justify-content-between w-100 mb-4 flex-wrap"> {/* flex-wrap para responsividade */}
-          {/* Card de Saldo Atual */}
-          <div className="bg-dark rounded p-4 shadow-sm text-center flex-grow-1 mx-2 mb-3" style={{ minWidth: '280px' }}>
-            <h5 className="text-white-50 mb-2">Saldo Atual</h5>
-            <p className={`fw-bold fs-2 m-0 ${currentBalance >= 0 ? 'text-success' : 'text-danger'}`}>
-              R$ {currentBalance.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-            </p>
+      <HeaderProfile />  
+      <div className="text-white d-flex flex-column justify-content-start align-items-start rounded vw-100" style={{ minHeight: "calc(100vh - 80px)" }}>
+        <div className="d-flex justify-content-around align-items-center w-100 mt-4">
+          <div className="bg-dark py-1 rounded fs-4" style={{ width: '200px' }}>
+            <div className="d-flex justify-content-around align-items-center w-100">
+              <h1 className="fs-3 fw-light m-0">Saldo</h1>
+              <svg width="20" height="20" fill="currentColor" className="bi bi-wallet2" viewBox="0 0 16 16">
+                <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z"/>
+              </svg>
+            </div>
+            <p></p>
           </div>
-
-          {/* Card de Receita Total (exemplo) */}
-          <div className="bg-dark rounded p-4 shadow-sm text-center flex-grow-1 mx-2 mb-3" style={{ minWidth: '280px' }}>
-            <h5 className="text-white-50 mb-2">Total de Receitas</h5>
-            <p className="fw-bold fs-2 m-0 text-info">
-              R$ {dummyTransactions.filter(t => t.type === 'Receita').reduce((sum, t) => sum + t.value, 0).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-            </p>
+          <div className="bg-dark py-1 rounded fs-4" style={{ width: '200px' }}>
+            <div className="d-flex justify-content-around align-items-center w-100">
+              <h1 className="fs-3 fw-light m-0">Receita</h1>
+              <svg width="20" height="20" fill="currentColor" className="bi bi-cash-coin" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0"/>
+                <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z"/>
+                <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/>
+                <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567"/>
+              </svg>
+            </div>
+            <p></p>
           </div>
-
-          {/* Card de Despesa Total (exemplo) */}
-          <div className="bg-dark rounded p-4 shadow-sm text-center flex-grow-1 mx-2 mb-3" style={{ minWidth: '280px' }}>
-            <h5 className="text-white-50 mb-2">Total de Despesas</h5>
-            <p className="fw-bold fs-2 m-0 text-warning">
-              R$ {dummyTransactions.filter(t => t.type === 'Despesa').reduce((sum, t) => sum + t.value, 0).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-            </p>
+          <div className="bg-dark py-1 rounded fs-4" style={{ width: '200px' }}>
+            <div className="d-flex justify-content-around align-items-center w-100">
+              <h1 className="fs-3 fw-light m-0">Despesa</h1>
+              <svg width="20" height="20" fill="currentColor" className="bi bi-cash" viewBox="0 0 16 16">
+                <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                <path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z"/>
+              </svg>
+            </div>
+            <p></p>
           </div>
         </div>
-
-        {/* Linha 2: Gráfico de Receitas e Despesas */}
-        <div className="bg-dark rounded p-3 mb-4 w-100 shadow-sm" style={{ maxWidth: '900px' }}> {/* Max-width para centrar */}
-          <MeuGrafico data={chartData} />
+        <div className="">
+          <div className="bg-dark">Gráfico Receita</div>
+          <div className="bg-dark">Gráfico Despesa</div>
         </div>
-
-        {/* Linha 3: Últimas Transações */}
-        <div className="w-100" style={{ maxWidth: '900px' }}> {/* Max-width para centrar */}
-          <TransactionTable transactions={latestTransactions} title="Últimas Transações" />
+        <div className="">
+          <div className="bg-dark">Gráfico Geral</div>
         </div>
-
+        <div className="">
+          <div className="bg-dark">Tabela Receita</div>
+        </div>
+        <div className="">
+          <div className="bg-dark">Tabela Despesa</div>
+        </div>
       </div>
     </>
   );
