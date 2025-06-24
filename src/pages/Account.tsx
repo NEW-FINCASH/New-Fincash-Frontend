@@ -192,8 +192,9 @@ export default function Account() {
               />
               <div>
                 <h1 className="text-white fw-medium mb-1">{user.displayName ?? "Usuário"}</h1>
+                <p className="mb-0 text-dark-emphasis">@thomaz_mellux</p>
                 <p className="mb-0 text-dark-emphasis">{user.email}</p>
-                
+                <p className="mb-0 text-dark-emphasis">+55 (12) 98707-2463</p>
               </div>
             </div>
             <div className="d-flex flex-column justify-content-between align-items-center" style={{ height: '90px'}}>
@@ -212,90 +213,6 @@ export default function Account() {
                     </svg>
                 </button>
             </div>
-          </div>
-          <div className="d-flex justify-content-between align-items-start mt-4 w-100" style={{ height: '280px'}} >
-            <div className="d-flex flex-column justify-content-start align-items-center w-50 h-100 pe-3">
-              <div className="bg-dark w-100 p-3 rounded" style={{ height: '50%'}}>
-                <h1 className="text-white fw-light fs-4">Saldo atual</h1>
-                {/* Exibe o saldo calculado dinamicamente */}
-                <p className={`fw-bold fs-3 m-0 ${currentBalance >= 0 ? 'text-success' : 'text-danger'}`}>
-                  R$ {currentBalance.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                </p>
-              </div>
-              <div className="bg-dark w-100 mt-3 p-3 rounded" style={{ height: '50%'}}>
-                <h1 className="text-white fw-light fs-4">Membro Desde</h1>
-                <p className="text-white-50 m-0">Vai ser com base na página de planos, quando o pagamento for realizado pela Stripe essa data vai constar como data de ínicio.</p>
-              </div>
-            </div>
-            <div className="w-50 h-100">
-              <div className="bg-dark w-100 rounded p-3 h-100 d-flex flex-column">
-                <h1 className="text-white fs-4 fw-medium text-center mb-3">Últimas notificações</h1>
-                <div className="flex-grow-1 overflow-auto notificacoes-scroll-area">
-                  {currentNotificacoes.map((notificacao) => (
-                    <div key={notificacao.id} className="px-3 py-2 text-white border border-secondary w-100 mt-2 rounded p-1">
-                      <div className="d-flex justify-content-between align-items-center">
-                        <h1 className="fw-medium fs-5 m-0">{notificacao.titulo}</h1>
-                        <p className="text-light-emphasis m-0" style={{ fontSize: "12px" }}>{notificacao.hora}</p>
-                      </div>
-                      <p className="m-0 text-secondary" style={{ fontSize: "15px" }}>{notificacao.descricao}</p>
-                    </div>
-                  ))}
-                </div>
-                {totalPages > 1 && (
-                  <div className="d-flex justify-content-center align-items-center mt-3">
-                    <button
-                      className="btn btn-sm btn-outline-light me-2"
-                      onClick={handlePrevPage}
-                      disabled={currentPage === 1}
-                    >
-                      Anterior
-                    </button>
-                    <span className="text-white">
-                      Página {currentPage} de {totalPages}
-                    </span>
-                    <button
-                      className="btn btn-sm btn-outline-light ms-2"
-                      onClick={handleNextPage}
-                      disabled={currentPage === totalPages}
-                    >
-                      Próxima
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-dark rounded text-white p-3 mt-4 d-flex flex-column align-items-center" style={{ width: '100%', height: ''}}>
-            <h1 className="text-white fw-light fs-4">Gráfico de Receitas e Despesas</h1>
-            <MeuGrafico data={chartData} /> {/* <-- Passa os dados dinâmicos para o gráfico */}
-          </div>
-          <div className="bg-dark rounded text-white p-3 mt-4" style={{ width: '100%', height: '' }}>
-            <table className="table table-dark table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">Tipo</th>
-                  <th scope="col">Valor</th>
-                  <th scope="col">Data</th>
-                  <th scope="col">Descrição</th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* Mapeia as transações para a tabela */}
-                {userTransactions.map((transaction) => (
-                  <tr key={transaction.id}>
-                    <th scope="row" className={transaction.type === 'Receita' ? 'text-success' : 'text-danger'}>
-                      {transaction.type}
-                    </th>
-                    <td>
-                      R$ {transaction.value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                    </td>
-                    <td>{new Date(transaction.date).toLocaleDateString('pt-BR')}</td>
-                    <td>{transaction.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </div>
       </div>
