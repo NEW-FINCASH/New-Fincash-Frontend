@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Account from './pages/Account';
 import Welcome from './pages/Welcome';
 import Plans from './pages/Plans';
+import News from './pages/News';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/" element={<Welcome />} />
           <Route path="/plans" element={<Plans />} />
+          <Route path="/news" element={<News />} />
         </Routes>
       </Router>
     </>
