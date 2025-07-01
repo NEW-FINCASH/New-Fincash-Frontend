@@ -33,7 +33,7 @@ export default function HeaderProfile() {
                 <div className="d-flex justify-content-between align-items-center gap-4">
                     <Link to="/home" className="text-white text-decoration-none">Management dashboard</Link>
                     <Link to="" className="text-white text-decoration-none">AI-powered goals</Link>
-                    <Link to="" className="text-white text-decoration-none">Latest news</Link>
+                    <Link to="/news" className="text-white text-decoration-none">Latest news</Link>
                     <Link to="" className="text-white text-decoration-none">Price in real time</Link>
                     <Link to="/account" className="text-decoration-none btn btn-light rounded-5 p-1 d-flex justify-content-center align-items-center" style={{ width: '40px', height: '40px' }}>
                         <img
