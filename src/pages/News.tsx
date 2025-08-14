@@ -139,68 +139,6 @@ export default function Noticias() {
             ))}
           </div>
         </section>
-
-        {/* Destaques (Featured Grid) */}
-        <section className="mb-5">
-          <h2 className="fs-4 mb-3">Featured</h2>
-          <div className="row g-4">
-            {noticias.slice(1, 7).map(noticia => (
-              <div className="col-lg-4" key={noticia.id}>
-                <div className="card bg-black text-white border-0 h-100">
-                  <img src={noticia.imagem} className="card-img-top" alt={noticia.titulo} />
-                  <div className="card-body">
-                    <span className="badge bg-success mb-2">{noticia.categoria}</span>
-                    <h5 className="card-title">{noticia.titulo}</h5>
-                    <p className="card-text text-white-50">{noticia.resumo}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Categorias com imagens */}
-        <section>
-          <h2 className="fs-4 mb-3">Categories</h2>
-          <div className="row g-4">
-            <div className="col-md-4">
-              <div className="position-relative">
-                <img
-                  src="https://images.unsplash.com/photo-1601987077681-22d8fbb44994"
-                  className="img-fluid rounded"
-                  alt="Entertainment"
-                />
-                <div className="position-absolute bottom-0 bg-dark bg-opacity-75 w-100 p-2">
-                  <h5 className="m-0">Entertainment</h5>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="position-relative">
-                <img
-                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
-                  className="img-fluid rounded"
-                  alt="Travel"
-                />
-                <div className="position-absolute bottom-0 bg-dark bg-opacity-75 w-100 p-2">
-                  <h5 className="m-0">Travel</h5>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="position-relative">
-                <img
-                  src="https://images.unsplash.com/photo-1615567961303-fb6c711d9f3a"
-                  className="img-fluid rounded"
-                  alt="Technology"
-                />
-                <div className="position-absolute bottom-0 bg-dark bg-opacity-75 w-100 p-2">
-                  <h5 className="m-0">Technology</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </>
   );

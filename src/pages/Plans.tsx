@@ -11,7 +11,7 @@ export default function Plans() {
     return (
         <>
             <HeaderProfile />
-            <div className="d-flex justify-content-start align-items-start rounded vw-100" style={{ minHeight: "calc(100vh - 80px)" }}>
+            <div className="d-flex justify-content-start align-items-start rounded vw-100 mb-5" style={{ minHeight: "calc(100vh - 80px)" }}>
                 <h1 className="w-100 text-white" style={{ position: 'absolute', textAlign: 'center', fontSize: '200px', zIndex: '1' }} >Pricing</h1>
                 <div className="d-flex justify-content-center align-items-center w-100 gap-2" style={{ marginTop: '150px' }}>
                     <div className="d-flex flex-column justify-content-start align-items-start rounded-4 p-4 text-light" style={{ width: '400px', height: '600px' ,backgroundColor: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.3)', zIndex: '1', backdropFilter: 'blur(10px)' }}>
